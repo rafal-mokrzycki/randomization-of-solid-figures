@@ -19,11 +19,15 @@ class Ellipsoid:
 
 
 class Ball(Ellipsoid):
+    """A class of Python object that describes the properties of a Ball"""
+
     def __init__(self, radius):
         super().__init__(radius, radius, radius)
 
 
 class RectangularCuboid:
+    """A class of Python object that describes the properties of a Rectangular Cuboid"""
+
     def __init__(
         self,
         length,
@@ -39,5 +43,7 @@ class RectangularCuboid:
 
 
 class Cube(RectangularCuboid):
+    """A class of Python object that describes the properties of a Cube"""
+
     def __init__(self, width):
         super().__init__(width, width, width)
