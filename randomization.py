@@ -13,7 +13,7 @@ def get_random_number(random_seed):
     # height = random.randint(100)
     # radius = random.choice([semi_axis_1, semi_axis_2, semi_axis_3])
     # cube_side = random.choice([length, width, height])
-    return random.randint(100)
+    return random.randint(1, 100)
 
 
 def interact_with_computer():
@@ -30,9 +30,13 @@ def interact_with_computer():
         get_random_number(random_seed),
         get_random_number(random_seed),
     )
-    return max(
+    return get_class_name_of_max_value(
         ball.compute_volume(),
         cube.compute_volume(),
         ellipsoid.compute_volume(),
         rect_cube.compute_volume(),
     )
+
+
+def get_class_name_of_max_value(*args):
+    return max(*args)
