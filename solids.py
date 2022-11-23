@@ -9,20 +9,18 @@ class Ellipsoid:
         semi_axis_1,
         semi_axis_2,
         semi_axis_3,
-        center=(0, 0, 0),
     ):
         self.semi_axis_1 = semi_axis_1
         self.semi_axis_2 = semi_axis_2
         self.semi_axis_3 = semi_axis_3
-        self.center = center
 
     def compute_volume(self):
         return (4 / 3) * math.pi * self.semi_axis_1 * self.semi_axis_2 * self.semi_axis_3
 
 
 class Ball(Ellipsoid):
-    def __init__(self, radius, center=(0, 0, 0)):
-        super().__init__(radius, radius, radius, center)
+    def __init__(self, radius):
+        super().__init__(radius, radius, radius)
 
 
 class RectangularCuboid:
