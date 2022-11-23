@@ -1,42 +1,29 @@
 import random
 
+import numpy as np
+
 from solids import Ball, Cube, Ellipsoid, RectangularCuboid
-
-
-def get_random_number(random_seed):
-    random.seed(random_seed)
-    # semi_axis_1 = random.randint(100)
-    # semi_axis_2 = random.randint(100)
-    # semi_axis_3 = random.randint(100)
-    # length = random.randint(100)
-    # width = random.randint(100)
-    # height = random.randint(100)
-    # radius = random.choice([semi_axis_1, semi_axis_2, semi_axis_3])
-    # cube_side = random.choice([length, width, height])
-    return random.randint(1, 100)
 
 
 def interact_with_computer():
     random_seed = input("Type in a number: ")
-    ball = Ball(get_random_number(random_seed))
-    cube = Cube(get_random_number(random_seed))
-    ellipsoid = Ellipsoid(
-        get_random_number(random_seed),
-        get_random_number(random_seed),
-        get_random_number(random_seed),
-    )
+    result = get_class_name_of_max_value(random_seed)
+    return f"""
+For the random seed={random_seed} '{result[0]}' has the greates volume of {np.round(float(result[1]),2)}.
+"""
+
+
+def get_class_name_of_max_value(random_seed, length=20):
+    random.seed(random_seed)
+    seq = random.sample(range(1, 100), length)
+    ball = Ball(random.choice(seq))
+    cube = Cube(random.choice(seq))
+    ellipsoid = Ellipsoid(random.choice(seq), random.choice(seq), random.choice(seq))
     rect_cube = RectangularCuboid(
-        get_random_number(random_seed),
-        get_random_number(random_seed),
-        get_random_number(random_seed),
+        random.choice(seq), random.choice(seq), random.choice(seq)
     )
-    return get_class_name_of_max_value(
-        ball.compute_volume(),
-        cube.compute_volume(),
-        ellipsoid.compute_volume(),
-        rect_cube.compute_volume(),
-    )
+    lst = []
+    for obj in [ball, cube, ellipsoid, rect_cube]:
+        lst.append((obj.__class__.__name__, obj.compute_volume()))
 
-
-def get_class_name_of_max_value(*args):
-    return max(*args)
+    return max(lst, key=lambda item: item[1])
