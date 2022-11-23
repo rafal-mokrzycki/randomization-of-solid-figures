@@ -34,3 +34,20 @@ focuses=({self.focus_1}, {self.focus_2}, {self.focus_3}) center={self.center})""
 class Ball(Ellipsoid):
     def __init__(self, radius, center=(0, 0, 0)):
         super().__init__(radius, radius, radius, center)
+
+
+class RectangularCuboid:
+    def __init__(
+        self,
+        length,
+        width,
+        height,
+    ):
+        self.width = width
+        self.height = height
+        self.length = length
+
+    def compute_volume(self):
+        return self.width * self.height * self.length
+
+
