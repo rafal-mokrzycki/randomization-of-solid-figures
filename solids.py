@@ -51,3 +51,7 @@ class RectangularCuboid:
         return self.width * self.height * self.length
 
 
+class Cube(RectangularCuboid):
+    def __init__(self, width):
+        super().__init__(width, width, width)
+
