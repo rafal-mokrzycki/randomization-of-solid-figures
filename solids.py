@@ -31,8 +31,6 @@ focuses=({self.focus_1}, {self.focus_2}, {self.focus_3}) center={self.center})""
         return (4 / 3) * math.pi * self.semi_axis_1 * self.semi_axis_2 * self.semi_axis_3
 
 
-class Ball:
-    pass
-
-
-
+class Ball(Ellipsoid):
+    def __init__(self, radius, center=(0, 0, 0)):
+        super().__init__(radius, radius, radius, center)
