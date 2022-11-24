@@ -133,7 +133,7 @@ class Cone:
     def compute_volume(self):
         """Return Cone's volume (without any unit)."""
 
-        return (1 / self.parameter) * self.radius * self.height
+        return (1 / self.parameter) * math.pi * (self.radius**2) * self.height
 
 
 class Cylinder(Cone):
