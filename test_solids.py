@@ -3,26 +3,34 @@ add --pdb to debug in command line
 use VScode test tools reccomended (the beaker)
 to debug VScode: pytest --collect-only """
 
+from solids import Ball, Cone, Cube, Cylinder, Ellipsoid, RectangularCuboid
+
 
 def test_compute_volume_ball():
-    pass
+    b = Ball(1)
+    assert b.compute_volume() == 4.1887902047863905
 
 
 def test_compute_volume_ellipsoid():
-    pass
+    e = Ellipsoid(1, 1, 1)
+    assert e.compute_volume() == 4.1887902047863905
 
 
 def test_compute_volume_rect_cuboid():
-    pass
+    r = RectangularCuboid(1, 2, 3)
+    assert r.compute_volume() == 6
 
 
 def test_compute_volume_cube():
-    pass
+    cube = Cube(3)
+    assert cube.compute_volume() == 27
 
 
 def test_compute_volume_cone():
-    pass
+    cone = Cone(1, 3)
+    assert cone.compute_volume() == 3.141592653589793
 
 
 def test_compute_volume_cylinder():
-    pass
+    cylinder = Cylinder(1, 3)
+    assert cylinder.compute_volume() == 9.42477796076938
