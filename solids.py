@@ -41,3 +41,18 @@ class RectangularCuboid:
 class Cube(RectangularCuboid):
     def __init__(self, width):
         super().__init__(width, width, width)
+
+
+class Cone:
+    def __init__(self, radius, height, parameter=3):
+        self.radius = radius
+        self.height = height
+        self.parameter = parameter
+
+    def compute_volume(self):
+        return (1 / self.parameter) * self.radius * self.height
+
+
+class Cylinder(Cone):
+    def __init__(self, radius, height, parameter=1):
+        super().__init__(radius, height, parameter)
