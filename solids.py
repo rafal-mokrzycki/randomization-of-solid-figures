@@ -45,7 +45,6 @@ class Ball(Ellipsoid):
     ----------
     radius : int | float
         radius (R)
-
     """
 
     def __init__(self, radius: int | float):
