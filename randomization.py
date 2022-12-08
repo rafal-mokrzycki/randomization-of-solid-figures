@@ -11,7 +11,7 @@ def interact_with_computer():
     random_seed = input("Type in a number: ")
     result = get_class_name_of_max_value(random_seed)
     return f"For the random seed={random_seed} '{result[0]}' \
-has the greates volume of {np.round(float(result[1]),2)}."
+has the greates volume of {np.round(float(result[1]),2)} units."
 
 
 def get_class_name_of_max_value(random_seed, length=20):
