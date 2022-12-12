@@ -1,6 +1,6 @@
 # Randomization of solid figures
 
-Web application that enables currencies conversion.
+App that generates solid figures volumes based on user input (random seed) and picks up the figure with the greatest volume for a given random seed.
 
 ## To run:
 
