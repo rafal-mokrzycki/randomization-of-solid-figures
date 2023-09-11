@@ -1,17 +1,6 @@
 import random
 
-import numpy as np
-
 from solids import Ball, Cube, Ellipsoid, RectangularCuboid
-
-
-def interact_with_computer():
-    """Returns info about the figure that has the greatest volume
-    for a random seed given by the user."""
-    random_seed = input("Type in a number: ")
-    result = get_class_name_of_max_value(random_seed)
-    return f"For the random seed={random_seed} '{result[0]}' \
-has the greates volume of {np.round(float(result[1]),2)} units."
 
 
 def get_class_name_of_max_value(random_seed, length=20):

@@ -1,7 +1,4 @@
-""" to run: python -m pytest -vv test_solids.py -s
-add --pdb to debug in command line
-use VScode test tools reccomended (the beaker)
-to debug VScode: pytest --collect-only """
+""" to run: python -m pytest -vv test_solids.py -s"""
 
 from solids import Ball, Cone, Cube, Cylinder, Ellipsoid, RectangularCuboid
 
