@@ -65,6 +65,7 @@ joblib==1.2.0
 jupyter-client==7.1.2
 jupyter-core==4.9.2
 kiwisolver==1.4.4
+-e git+https://github.com/MachineryAnalytics/ada.git@79f9fd49a07cd75e6139d8e69d4a78fb62cb1ce3#egg=lantern_utils
 lark==1.1.4
 ldfparser==0.17.0
 lxml==4.9.1
